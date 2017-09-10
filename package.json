@@ -33,6 +33,7 @@
     "@google-cloud/datastore": "^1.1.0",
     "actions-on-google": "^1.2.1",
     "babel-runtime": "^6.23.0",
+    "bluebird": "^3.5.0",
     "irishrail-client": "^1.0.2",
     "lodash": "^4.17.4"
   },
