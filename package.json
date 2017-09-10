@@ -15,7 +15,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "rimraf lib && `yarn bin`/babel --source-maps --out-dir lib src",
-    "deploy": "yarn build && gcloud beta functions deploy nextDart --entry-point handler --stage-bucket irishrail-action-function --trigger-http --memory=256MB"
+    "test": "mocha --compilers js:babel-core/register --colors ./test/**/*.spec.js",
+    "deploy": "yarn build && gcloud beta functions deploy nextDart --entry-point handler --stage-bucket irishrail-action-function --trigger-http --memory=128MB"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "1.4.17",
@@ -24,9 +25,12 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "rimraf": "^2.6.1"
+    "mocha": "^3.5.1",
+    "rimraf": "^2.6.1",
+    "sinon": "^3.2.1"
   },
   "dependencies": {
+    "@google-cloud/datastore": "^1.1.0",
     "actions-on-google": "^1.2.1",
     "babel-runtime": "^6.23.0",
     "irishrail-client": "^1.0.2"
