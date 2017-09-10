@@ -1,5 +1,5 @@
 import Datastore from '@google-cloud/datastore';
-import map from 'lodash/map';
+import { map } from 'lodash';
 
 const ds = Datastore({ projectId: 'livedartapp' });
 const kind = 'Profile';
